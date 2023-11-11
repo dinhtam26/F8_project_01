@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F8_project_01</title>
+    <title>F8_project_01 1234</title>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="./asset/favicon/apple-icon-57x57.png" >
     <link rel="apple-touch-icon" sizes="60x60" href="./asset/favicon/apple-icon-60x60.png">
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./asset/css/reset.css">
     <link rel="stylesheet" href="./asset/font/stylesheet.css">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/reponisve.css">
 
 </head>
 <body>
@@ -34,26 +35,38 @@
     <header  class="fix-header">
         <div class="content">
             <nav class="navbar">
+                <!-- Tablet & Mobile Menu -->
+                <label for="menu-checkbox" class="toggle-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
                 <!-- Logo -->
-                <a href="#">
-                <img src="./asset/image/logo.svg" alt="Besnik.">
+                <a class="logo" href="#">
+                <img  src="./asset/image/logo.svg" alt="Besnik.">
                 </a>
                 <!-- Navig -->
-                <ul>
+                <ul id="pc-nav">
                     <li>
-                        <a href="#home">Home</a>
+                        <a class="menu-drawer__link" href="#home">Home</a>
                     </li>
                     <li>
-                        <a href="#features">Features</a>
+                        <a class="menu-drawer__link" href="#features">Features</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a class="menu-drawer__link" href="#services">Services</a>
                     </li>
                     <li>
-                        <a href="#resources">Resources</a>
+                        <a class="menu-drawer__link" href="#resources">Resources</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a class="menu-drawer__link" href="#contact">Contact</a>
+                    </li> 
+    
+                    <li class="show-on-mobile separate">
+                        <a class="menu-drawer__link" href="#contact">Sign in</a>
+                    </li> 
+    
+                    <li class="show-on-mobile">
+                        <a class="menu-drawer__link" href="#contact">Sign up</a>
                     </li> 
                 </ul>
                 <!-- Action -->
@@ -64,7 +77,29 @@
             </nav>
         </div>
     </header>
-        <div id="home" class="hero-wrap">
+    <!-- Tablet/ Mobile header -->
+    <header class="mobile-header">
+        <input type="checkbox" name="" id="menu-checkbox" class="menu-checkbox" hidden>
+        <!-- Overlay -->
+        <label for="menu-checkbox" class="menu-overlay"></label>
+        <!-- Menu Content -->
+        <div class="menu-drawer">
+            <a  class="menu-drawer__logo" href="#">
+                <img  src="./asset/image/logo.svg" alt="Besnik.">
+            </a>
+            <!-- Navig -->
+            <ul id="mobile-nav">
+                <script>
+                    const pcNav = document.querySelector('#pc-nav');
+                    const mobileNav = document.querySelector('#mobile-nav');
+
+                    mobileNav.innerHTML = pcNav.innerHTML;
+                </script>
+              
+            </ul>
+        </div>
+    </header>
+        <div id="home" class="hero-wrap" >
             <div class="content">
 
                 <div class="hero">
@@ -82,12 +117,13 @@
             </div>
         </div>
 
-        <!-- Clients -->
-        <div class="clients">
+       <main >
+         <!-- Clients -->
+         <div class="clients">
             <div class="content">
                 <div class="row">
                     <!-- Logo -->
-                    <img src="./asset/image/logo.svg" alt="Besnik." class="logo">
+                    <img src="./asset/image/logo.svg" alt="Besnik." class="logo__client">
                     <!-- Star -->
                     <div class="star">
                         <img src="./asset/image/star.svg" alt="Star">
@@ -95,7 +131,7 @@
                 </div>
                 <div class="row">
                     <p class="desc">More than 45,000+ companies trust besnik</p>
-                    <p class="desc">5 Star Ratings (2k+ Review)</p>
+                    <p class="desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
                 </div>
                 <!-- Image-clients -->
                 <div class="images">
@@ -220,7 +256,9 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="view-all show-on-mobile">
+                    <a href="#!" class="btn">View All Properties</a>
+                </div>
             </div>
         </div>
 
@@ -326,8 +364,9 @@
             </div>
         </div>
 
+       </main >
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" >
             <div class="content">
                 <div class="rows row-top">
                     <!-- Product column -->
@@ -397,7 +436,7 @@
                 </div>
 
                 <div class="rows row-bottom">
-                    <img src="./asset/image/logo.svg" alt="Besnik." class="logo">
+                    <img src="./asset/image/logo.svg" alt="Besnik." class="logo__footer">
                     <p class="copyright">Copyright 2020.com, All rights reserved.</p>
                 </div>
             </div>
